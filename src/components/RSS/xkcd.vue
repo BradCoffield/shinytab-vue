@@ -2,6 +2,7 @@
    <div id="xkcd"></div>
 </template>
 <script>
+/* eslint-disable */
 export default {
     created(){
           this.$http

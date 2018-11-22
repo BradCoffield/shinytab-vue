@@ -34,6 +34,7 @@ export default {
           throw "API response is empty....";
         }
         let pinboardResults = res.data.posts;
+         console.log('p', pinboardResults);
         this.itemDetails = pinboardResults;
         // console.log(pinboardResults.length);
 

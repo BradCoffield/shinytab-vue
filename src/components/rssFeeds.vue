@@ -6,6 +6,7 @@
 </template>
 
 <script>
+/* eslint-disable */
 export default {
   created() {
       // could be called whichFeeds. Each number ultimately corresponds to a route and a specific feed/

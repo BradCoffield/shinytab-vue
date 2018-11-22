@@ -4,6 +4,7 @@
 </template>
 
 <script>
+/* eslint-disable */
 export default {
   data() {
     return {

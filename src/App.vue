@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="left">
-      <!-- <editing-test thing="hihhhhh"></editing-test> -->
+     
       <billingsWeather v-if="showbillingsWeather"></billingsWeather>
       <chekhovQuote v-if="chekhovQuote.show"></chekhovQuote>
       <basho-quote></basho-quote>
@@ -12,7 +12,7 @@
     </div>
     <div class="right">
       <button @click="showbillingsWeather = !showbillingsWeather">Billings Weather1</button>
-      <button @click="showHideUpdate(chekhovQuote)">Billings Weather</button>
+      <button @click="showHideUpdate(chekhovQuote)">showHideUpdate</button>
       <button @click="showrssFeeds = !showrssFeeds">show me feedz</button>
       <button @click="chekhovQuote.show = !chekhovQuote.show">Checkhov quote</button>
       <button @click="addData">hi</button>
@@ -21,6 +21,7 @@
 </template>
 
 <script>
+/* eslint-disable */
 import Firebase from "firebase";
 require("firebase/firestore");
 
@@ -71,17 +72,20 @@ export default {
             
       //This selects the specific field of our record, based on the data passed from the button. 
       let dbThing = this.fsComponents[0][el.name];
-      let theName = el.name;
+
+       
      //This whatever the value is in the database, switch it and save to variable.
       let changeTo = dbThing ? false : true;
       //change the appropriate data here in vue, which will update component's visibility bc of v-if on the component
       el.show = changeTo;
       //change the value in the database as well
       // OKAY SO THIS SUCCESSFULLY TARGETS THAT
-      // this.$firestore.fsComponents.doc("allComponents").update({chekhovQuote: false})
-
-      let thing = `this.$firestore.fsComponents.doc("allComponents").update({${theName}: false})`;
-      thing();
+      // this.$firestore.fsComponents.doc("allComponents").update({chekhovQuote: changeTo});
+      
+      //This works with the variable name!!!
+      this.$firestore.fsComponents.doc("allComponents").update({[el.name]: changeTo});
+ 
+     
      
       
     }
