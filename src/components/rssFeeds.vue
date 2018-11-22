@@ -1,7 +1,7 @@
 <template>
     <div>
        
-          <div id="rss-feeds"></div>
+          <div class="sub-container"id="rss-feeds"></div>
     </div>
 </template>
 

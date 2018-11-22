@@ -1,9 +1,9 @@
 <template>
     <li class="pinboardItemWrap">
   <ul>
-        <li class="pinboardItemTitle"><a :href="link">{{title}}</a>
-        </li> <li>{{description}}</li>
-        <li class="pinboardItemTags">  {{tags}}</li>
+        <li class="pinboardItemTitle"><a :href="link">{{title}} <span class="smallish italic pinboardItemTags">{{tags}}</span></a>
+        </li> <li class="mediumish">{{description}}</li>
+         
         </ul>  
         
     </li>
@@ -17,7 +17,8 @@ export default {
 
 <style scoped>
 .pinboardItemTitle a {
-    color: #333;
+    color:inherit;
+    text-decoration: none;  
 }
 .pinboardItemTags {
     margin-left: 1rem;

@@ -28,7 +28,7 @@ body {
   }
   
   .sub-container {
-    background: rgba(185, 44, 44, 0.329);
+    background: rgba(255,255, 255, .3);
     border-radius: 15px;
     padding: 15px;
     margin: 1rem 0;
@@ -53,9 +53,18 @@ body {
   //     margin: 0 0.5rem;
   //   }
   // }
+
+  .italic {
+    font-style: italic;
+  }
   
   .smallish {
     font-size: 12px;
+  }
+  .mediumish {
+    font-size: 14px;
+    margin-left: .5rem;
+    margin-bottom: .1rem;
   }
   
   .rss-feed-group {

@@ -1,5 +1,5 @@
 <template>
-    <div id="dark-sky"><ul v-html="weather"></ul>
+    <div class="sub-container" id="dark-sky"><ul v-html="weather"></ul>
     <div id="alerttt">{{alerttt}}</div></div>
 </template>
 
@@ -39,11 +39,9 @@ export default {
 };
 </script>
 <style scoped>
-div {
-  background-color: lightcyan;
- 
-} #alerttt{
-    color: purple;
+  #alerttt{
+    background-color: purple;
+    color: white;
     font-weight: bold;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-   <div id="xkcd"></div>
+   <div class="sub-container" id="xkcd"></div>
 </template>
 <script>
 /* eslint-disable */

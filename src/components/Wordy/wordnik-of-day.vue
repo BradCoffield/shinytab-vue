@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="sub-container">
         <span class="wordnik-word">
             <a :href="theLink">{{data.word}}</a>
         </span>

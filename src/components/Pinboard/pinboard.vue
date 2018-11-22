@@ -1,18 +1,20 @@
 /* eslint-disable */ 
 <template>
-    <ul id="pinboard-ul">
-        <pinboardItem 
-         v-for="(item, index) in itemDetails"
-         :key="index"
-         :link="item.href"
-         :title="item.description"
-         :tags="item.tags"
-         :description="item.extended"
-         >
-             
-        </pinboardItem>
-        <!-- <pinboardItem v-for="item in "    :item="itemDetails"></pinboardItem> -->
-    </ul>
+    <div class="sub-container">
+      <ul id="pinboard-ul">
+          <pinboardItem 
+           v-for="(item, index) in itemDetails"
+           :key="index"
+           :link="item.href"
+           :title="item.description"
+           :tags="item.tags"
+           :description="item.extended"
+           >
+               
+          </pinboardItem>
+          <!-- <pinboardItem v-for="item in "    :item="itemDetails"></pinboardItem> -->
+      </ul>
+    </div>
 </template>
 
  
@@ -81,9 +83,7 @@ export default {
 };
 </script>
 <style   scoped>
-#pinboard-ul {
-  background-color: aqua;
-}
+ 
 </style>
 
 
