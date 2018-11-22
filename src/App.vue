@@ -32,7 +32,7 @@ import xkcd from "./components/RSS/xkcd";
 import billingsWeather from "./components/billingsWeather";
 import pinboard from "./components/Pinboard/pinboard";
 import wordnikOfDay from "./components/Wordy/wordnik-of-day";
-import _ from "lodash"
+import _ from "lodash";
 
 var config = {
   apiKey: process.env.FIREBASE_APIKEY,
@@ -52,7 +52,6 @@ firestore.settings(settings);
 export default {
   data: function() {
     return {
-     
       billingsWeather: {
         name: "billingsWeather",
         show: true
@@ -72,24 +71,28 @@ export default {
       wordnikOfDay: {
         name: "wordnikOfDay",
         show: false
-      },
+      }
     };
   },
-  created(){
+  created() {
     console.log(_.keysIn(this.$data));
     let ourStuff = _.keysIn(this.$data);
-    ourStuff.forEach((el) => {
+    ourStuff.forEach(el => {
       console.log(el);
       //so this doesn't work but I think I'm close. Its reaching out to allComponents and getting each one. And then logging the value of each one based on the name of el
       // now I need to figure out is how to get those values and place them into the .show value of them in the data object.
-      this.$firestore.fsComponents.doc("allComponents").get().then((doc) => {console.log(doc.data()[el]);
-        
-      })
-      
-    })
+      // this.$firestore.fsComponents.doc("allComponents").get().then((doc) => {console.log(doc.data()[el]);
+      this.$firestore.fsComponents
+        .doc("allComponents")
+        .get()
+        .then(doc => {
+          console.log('thisdataelshow', this.$data[el].show);
+          this.$data[el].show = doc.data()[el];
+        });
+    });
   },
   methods: {
-      showHideUpdate: function(el) {
+    showHideUpdate: function(el) {
       //what I want to do here is check the value from the database and invert it and put that in the data here which the component itself is watching
 
       //This selects the specific field of our record, based on the data passed from the button.
