@@ -27,7 +27,7 @@ export default {
         this.data = res.data;
         this.theLink = `https://www.wordnik.com/words/${res.data.word}`;
       })
-      .catch(error => alert(error));
+      .catch(error => alert('Wordnik',error));
   }
 };
 </script>

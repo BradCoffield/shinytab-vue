@@ -1,10 +1,5 @@
 <template>
-    <div class="sub-container" id="basho-quote">   <input
-  type="checkbox"
-  v-model="toggle"
-  true-value="yes"
-  false-value="no"
-><div  v-if="toggle == 'yes'">
+    <div class="sub-container" id="basho-quote">    <div   >
     <span  v-html="quote"></span><br><div class="smallish">--Basho</div>
 </div></div>
 </template>
@@ -21,7 +16,7 @@ export default {
     data(){
         return {
             quote: '',
-            toggle: 'yes'
+             
         }
     },
   created() {

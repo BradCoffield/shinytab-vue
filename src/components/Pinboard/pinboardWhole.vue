@@ -28,7 +28,7 @@ export default {
         // console.log(pinboardResults)
       })
       // eslint-disable-next-line
-      .catch(err => alert(err));
+      .catch(err => alert('Pinboard',err));
   }
 };
 </script>
