@@ -28,7 +28,5 @@ export default {
 </script>
 
 <style scoped>
-div {
-  background: goldenrod;
-}
+ 
 </style>

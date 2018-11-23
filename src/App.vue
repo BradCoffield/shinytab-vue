@@ -1,22 +1,39 @@
 
 <template>
   <div id="app">
-    <div class="left">
-      <!-- <editing-test thing="hihhhhh"></editing-test> -->
-      <billingsWeather v-if="billingsWeather.show"></billingsWeather>
+
+ 
+    <billingsWeather v-if="billingsWeather.show"></billingsWeather>
       <chekhovQuote v-if="chekhovQuote.show"></chekhovQuote>
       <basho-quote v-if="bashoQuote.show"></basho-quote>
       <wordnikOfDay v-if="wordnikOfDay.show"></wordnikOfDay>
-      <pinboard></pinboard>
-      <xkcd></xkcd>
+      <pinboard v-if="pinboard.show"></pinboard>
+      <xkcd v-if="xkcd.show"></xkcd>
+      <unsplash v-if="unsplash.show"></unsplash>
       <rssFeeds v-if="rssFeeds.show"></rssFeeds>
-    </div>
+      <customPhilosophyQuote v-if="customPhilosophyQuote.show"></customPhilosophyQuote>
+      <customWritingQuote v-if="customWritingQuote.show"></customWritingQuote>  
+      <designQuote v-if="designQuote.show"></designQuote> 
+      <programming-quote v-if="programmingQuote.show"></programming-quote> 
+      <quote-of-day v-if="quoteOfDay.show"></quote-of-day>
+ 
+
+   
     <div class="right">
-      <button @click="showHideUpdate(billingsWeather)">Billings Weather1</button>
-      <button @click="showHideUpdate(rssFeeds)">show me feedz</button>
-      <button @click="showHideUpdate(chekhovQuote)">Checkhov quote</button>
-      <button @click="showHideUpdate(bashoQuote)">Basho quote</button>
-      <button @click="showHideUpdate(wordnikOfDay)">Word of the day</button>
+      <button :class="{ active: billingsWeather.show, inactive: !billingsWeather.show }" @click="showHideUpdate(billingsWeather)">Billings Weather1</button>
+      <button :class="{ active: rssFeeds.show, inactive: !rssFeeds.show }" @click="showHideUpdate(rssFeeds)">show me feedz</button>
+      <button :class="{ active: chekhovQuote.show, inactive: !chekhovQuote.show }" @click="showHideUpdate(chekhovQuote)">Checkhov quote</button>
+      <button :class="{ active: bashoQuote.show, inactive: !bashoQuote.show }" @click="showHideUpdate(bashoQuote)">Basho quote</button>
+      <button :class="{ active: wordnikOfDay.show, inactive: !wordnikOfDay.show }" @click="showHideUpdate(wordnikOfDay)">Word of the day</button>
+      <button :class="{ active: pinboard.show, inactive: !pinboard.show }" @click="showHideUpdate(pinboard)">Pinboard</button>
+      <button :class="{ active: xkcd.show, inactive: !xkcd.show }" @click="showHideUpdate(xkcd)">xkcd</button>
+      <button :class="{ active: unsplash.show, inactive: !unsplash.show }" @click="showHideUpdate(unsplash)">unsplash</button>
+      <button :class="{ active: customPhilosophyQuote.show, inactive: !customPhilosophyQuote.show }" @click="showHideUpdate(customPhilosophyQuote)">Philosophy Quote</button>
+      <button :class="{ active: customWritingQuote.show, inactive: !customWritingQuote.show }" @click="showHideUpdate(customWritingQuote)">Writing Quote</button>
+      <button :class="{ active: designQuote.show, inactive: !designQuote.show }" @click="showHideUpdate(designQuote)">Design Quote</button>
+      <button :class="{ active: programmingQuote.show, inactive: !programmingQuote.show }" @click="showHideUpdate(programmingQuote)">Programming Quote</button>
+      <button :class="{ active: quoteOfDay.show, inactive: !quoteOfDay.show }" @click="showHideUpdate(quoteOfDay)">Quote of Day</button>
+
     </div>
   </div>
 </template>
@@ -32,7 +49,14 @@ import xkcd from "./components/RSS/xkcd";
 import billingsWeather from "./components/billingsWeather";
 import pinboard from "./components/Pinboard/pinboard";
 import wordnikOfDay from "./components/Wordy/wordnik-of-day";
+//TODO: hey dude change me to import only the bit used here
 import _ from "lodash";
+import unsplash from "./components/Imagistic/Unsplash"
+import customPhilosophyQuote from "./components/Quotes/CustomPhilosophyQuotes"
+import customWritingQuote from "./components/Quotes/CustomWritingQuotes"
+import designQuote from "./components/Quotes/DesignQuote"
+import programmingQuote from "./components/Quotes/ProgrammingQuote"
+import quoteOfDay from "./components/Quotes/QuotesOfDay"
 
 var config = {
   apiKey: process.env.FIREBASE_APIKEY,
@@ -71,7 +95,39 @@ export default {
       wordnikOfDay: {
         name: "wordnikOfDay",
         show: false
-      }
+      },
+      pinboard: {
+        name: "pinboard",
+        show: false
+      },
+      xkcd: {
+        name: "xkcd",
+        show: false
+      },
+      unsplash: {
+        name: "unsplash",
+        show: false
+      },
+      customPhilosophyQuote: {
+        name: "customPhilosophyQuote",
+        show: false
+      },
+      customWritingQuote: {
+        name: "customWritingQuote",
+        show: false
+      },
+      designQuote: {
+        name: "designQuote",
+        show: false
+      },
+      programmingQuote: {
+        name: "programmingQuote",
+        show: false
+      },
+      quoteOfDay: {
+        name: "quoteOfDay",
+        show: false
+      },
     };
   },
   created() {
@@ -125,10 +181,18 @@ export default {
     xkcd,
     billingsWeather,
     pinboard,
-    wordnikOfDay
+    wordnikOfDay,
+    unsplash,
+    customPhilosophyQuote,
+    customWritingQuote,
+    designQuote,
+    programmingQuote,
+    quoteOfDay
   }
 };
 </script>
 
 <style scoped>
+.active {background-color: slateblue}
+.inactive {background-color: lightslategray}
 </style>

@@ -1,7 +1,7 @@
 <template>
     <div>
        
-          <div class="sub-container"id="rss-feeds"></div>
+          <div class="sub-container" id="rss-feeds"></div>
     </div>
 </template>
 
@@ -16,8 +16,8 @@ export default {
         this.$http
           .get(`https://shinytab.herokuapp.com/rss/${num}`)
           .then(res =>{ let data = res.data;
-        var d1 = document.getElementById("rss-feeds");
-        d1.insertAdjacentHTML(
+        var d2 = document.getElementById("rss-feeds");
+        d2.insertAdjacentHTML(
           "beforeend",
           `<div class="rss-feed-group"><div class="rss-feed-link"><a href="${
             data.link

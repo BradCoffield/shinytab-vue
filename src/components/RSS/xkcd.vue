@@ -2,14 +2,14 @@
    <div class="sub-container" id="xkcd"></div>
 </template>
 <script>
-/* eslint-disable */
+ 
 export default {
     created(){
           this.$http
           .get(`https://shinytab.herokuapp.com/rss/0`)
           .then(res => {
             let data = res.data;
-            // console.log('asodifjs;odfij', data);
+           
             let xk = document.getElementById("xkcd");
             xk.insertAdjacentHTML(
               "beforeend",
