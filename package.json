@@ -11,6 +11,7 @@
     "@firebase/app": "^0.3.4",
     "@firebase/firestore": "^0.8.7",
     "axios": "^0.18.0",
+    "buefy": "^0.7.1",
     "firebase": "^5.5.8",
     "vue": "^2.5.17",
     "vue-firestore": "^0.3.1"
