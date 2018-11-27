@@ -1,19 +1,23 @@
 <template>
     <div>
-        <div class="sub-container">
-            <a href="#unsplash">
-                    <img src="https://source.unsplash.com/random" width="75px" height="75px" alt="">
-                </a>
-        </div>
-           <div class="lightbox" id="unsplash">
-        <div class="box">
-            <a class="close" href="#">X</a>
-            <p class="title">Unsplash</p>
-            <div class="content">
-                <img class="modal-img" src="https://source.unsplash.com/random" alt="">
-                <!-- Your content here -->
-            </div>
-        </div>
-    </div>
+  
+               <img src="https://source.unsplash.com/random" width="275" @click="isImageModalActive = true">
+            
+            <b-modal :active.sync="isImageModalActive">
+                <p class=" "  >
+                       <img  src="https://source.unsplash.com/random" alt="">
+                </p>
+            </b-modal>
+
+      
     </div>
 </template>
+<script>
+export default {
+     data(){
+        return {
+             
+             isImageModalActive: false,
+        }
+}}
+</script>

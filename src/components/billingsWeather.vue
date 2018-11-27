@@ -38,10 +38,12 @@ export default {
   }
 };
 </script>
-<style scoped>
+<style >
   #alerttt{
     background-color: purple;
     color: white;
     font-weight: bold;
 }
+.bold {font-weight: bold; }
+#dark-sky {font-size: .9rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif  }
 </style>

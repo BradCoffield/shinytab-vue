@@ -24,9 +24,9 @@ export default {
           }" target="_blank">${
             // `<div class="rss-feed-group sub-container"><div class="rss-feed-link"><a href="${data.link}" target="_blank">${
             data.title
-          }</a></div><div class="rss-feed-feedname smallish">${
+          }</a><span class="rss-feed-feedname smallish">${
             data.site
-          }</div></div>`
+          }</span></div> </div>`
         );})
           .catch(err => console.log(err));
        
@@ -68,4 +68,6 @@ export default {
 </script>
 
 <style>
+.rss-feed-feedname { margin-left: 7px;font-size: 12px;}
+.rss-feed-link {margin-bottom: .5rem}
 </style>
